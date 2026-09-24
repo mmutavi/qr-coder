@@ -11,3 +11,7 @@ import os
 import customtkinter as ctk
 from tkinter import filedialog
 from PIL import Image, ImageTk
+
+import qr_logic as logic
+
+ctk.set_appearance_mode("dark")
