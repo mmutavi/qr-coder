@@ -15,3 +15,7 @@ from PIL import Image, ImageTk
 import qr_logic as logic
 
 ctk.set_appearance_mode("dark")
+
+BG = "#0b0e10"
+PANEL = "#171b1e"
+ACCENT = "#4fd1c5"
