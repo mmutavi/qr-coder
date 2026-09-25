@@ -33,3 +33,10 @@ class QRToolkitApp(ctk.CTk):
         self.tabs.pack(fill="both", expand=True, padx=20, pady=20)
         self.tabs.add("Generate")
         self.tabs.add("Scan")
+
+        self._build_generate_tab(self.tabs.tab("Generate"))
+        self._build_scan_tab(self.tabs.tab("Scan"))
+
+        self.cap = None
+
+    # -------------------------------------------------------------- generate
