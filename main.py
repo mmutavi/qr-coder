@@ -27,3 +27,9 @@ class QRToolkitApp(ctk.CTk):
         self.title("QR Code Toolkit")
         self.geometry("760x640")
         self.configure(fg_color=BG)
+
+        self.tabs = ctk.CTkTabview(self, fg_color=BG, segmented_button_fg_color=PANEL,
+                                    segmented_button_selected_color="#2a2a30")
+        self.tabs.pack(fill="both", expand=True, padx=20, pady=20)
+        self.tabs.add("Generate")
+        self.tabs.add("Scan")
