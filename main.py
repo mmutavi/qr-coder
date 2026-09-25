@@ -40,3 +40,14 @@ class QRToolkitApp(ctk.CTk):
         self.cap = None
 
     # -------------------------------------------------------------- generate
+
+    def _build_generate_tab(self, tab):
+        tab.configure(fg_color=BG)
+
+        row = ctk.CTkFrame(tab, fg_color=PANEL, corner_radius=12)
+        row.pack(fill="x", pady=(0, 16))
+        self.text_var = ctk.StringVar()
+        ctk.CTkEntry(row, textvariable=self.text_var, width=420,
+                     placeholder_text="Text or URL to encode").pack(side="left", padx=16, pady=14)
+        ctk.CTkButton(row, text="Generate", fg_color="#2a2a30",
+                      command=self._generate).pack(side="left", padx=(0, 16))
