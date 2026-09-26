@@ -51,3 +51,6 @@ class QRToolkitApp(ctk.CTk):
                      placeholder_text="Text or URL to encode").pack(side="left", padx=16, pady=14)
         ctk.CTkButton(row, text="Generate", fg_color="#2a2a30",
                       command=self._generate).pack(side="left", padx=(0, 16))
+
+        self.qr_label = ctk.CTkLabel(tab, text="", fg_color=PANEL, corner_radius=12)
+        self.qr_label.pack(pady=10)
