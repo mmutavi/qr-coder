@@ -58,3 +58,18 @@ class QRToolkitApp(ctk.CTk):
         self.save_btn = ctk.CTkButton(tab, text="Save as PNG", fg_color="#2a2a30",
                                        command=self._save, state="disabled")
         self.save_btn.pack(pady=6)
+
+        self._current_image = None
+
+    def _generate(self):
+        text = self.text_var.get().strip()
+        if not text:
+            return
+        image = logic.make_qr(text)
+        self._current_image = image
+        preview = image.copy()
+        preview.thumbnail((360, 360))
+        photo = ImageTk.PhotoImage(preview)
+        self.qr_label.configure(image=photo)
+        self.qr_label.image = photo
+        self.save_btn.configure(state="normal")
