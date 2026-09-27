@@ -54,3 +54,7 @@ class QRToolkitApp(ctk.CTk):
 
         self.qr_label = ctk.CTkLabel(tab, text="", fg_color=PANEL, corner_radius=12)
         self.qr_label.pack(pady=10)
+
+        self.save_btn = ctk.CTkButton(tab, text="Save as PNG", fg_color="#2a2a30",
+                                       command=self._save, state="disabled")
+        self.save_btn.pack(pady=6)
