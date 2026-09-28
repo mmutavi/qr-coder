@@ -73,3 +73,10 @@ class QRToolkitApp(ctk.CTk):
         self.qr_label.configure(image=photo)
         self.qr_label.image = photo
         self.save_btn.configure(state="normal")
+
+    def _save(self):
+        if self._current_image is None:
+            return
+        path = filedialog.asksaveasfilename(defaultextension=".png", filetypes=[("PNG image", "*.png")])
+        if path:
+            self._current_image.save(path)
