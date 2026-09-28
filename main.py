@@ -85,3 +85,11 @@ class QRToolkitApp(ctk.CTk):
 
     def _build_scan_tab(self, tab):
         tab.configure(fg_color=BG)
+
+        controls = ctk.CTkFrame(tab, fg_color=PANEL, corner_radius=12)
+        controls.pack(fill="x", pady=(0, 16))
+        ctk.CTkButton(controls, text="Scan from image", fg_color="#2a2a30",
+                      command=self._scan_image).pack(side="left", padx=16, pady=14)
+        self.webcam_btn = ctk.CTkButton(controls, text="Start webcam scan", fg_color="#2a2a30",
+                                         command=self._toggle_webcam)
+        self.webcam_btn.pack(side="left", padx=(0, 16))
