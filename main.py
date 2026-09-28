@@ -80,3 +80,8 @@ class QRToolkitApp(ctk.CTk):
         path = filedialog.asksaveasfilename(defaultextension=".png", filetypes=[("PNG image", "*.png")])
         if path:
             self._current_image.save(path)
+
+    # ------------------------------------------------------------------ scan
+
+    def _build_scan_tab(self, tab):
+        tab.configure(fg_color=BG)
