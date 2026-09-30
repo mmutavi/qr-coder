@@ -93,3 +93,6 @@ class QRToolkitApp(ctk.CTk):
         self.webcam_btn = ctk.CTkButton(controls, text="Start webcam scan", fg_color="#2a2a30",
                                          command=self._toggle_webcam)
         self.webcam_btn.pack(side="left", padx=(0, 16))
+
+        self.scan_video_label = ctk.CTkLabel(tab, text="", fg_color=PANEL, corner_radius=12)
+        self.scan_video_label.pack(pady=10)
