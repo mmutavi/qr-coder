@@ -100,3 +100,12 @@ class QRToolkitApp(ctk.CTk):
         ctk.CTkLabel(tab, text="Decoded result", text_color=ACCENT).pack(anchor="w")
         self.result_var = ctk.StringVar(value="Nothing scanned yet")
         ctk.CTkLabel(tab, textvariable=self.result_var, wraplength=680, justify="left").pack(anchor="w", pady=(4, 10))
+
+        self.scanning = False
+
+    def _scan_image(self):
+        path = filedialog.askopenfilename(filetypes=[("Images", "*.png *.jpg *.jpeg *.bmp")])
+        if not path:
+            return
+        text = logic.decode_image_file(path)
+        self.result_var.set(text or "No QR code found in that image")
