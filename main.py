@@ -96,3 +96,7 @@ class QRToolkitApp(ctk.CTk):
 
         self.scan_video_label = ctk.CTkLabel(tab, text="", fg_color=PANEL, corner_radius=12)
         self.scan_video_label.pack(pady=10)
+
+        ctk.CTkLabel(tab, text="Decoded result", text_color=ACCENT).pack(anchor="w")
+        self.result_var = ctk.StringVar(value="Nothing scanned yet")
+        ctk.CTkLabel(tab, textvariable=self.result_var, wraplength=680, justify="left").pack(anchor="w", pady=(4, 10))
