@@ -119,3 +119,8 @@ class QRToolkitApp(ctk.CTk):
                 self.cap.release()
                 self.cap = None
             return
+
+        self.scanning = True
+        self.webcam_btn.configure(text="Stop webcam scan")
+        self.cap = cv2.VideoCapture(0)
+        self._scan_loop()
