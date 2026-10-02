@@ -109,3 +109,13 @@ class QRToolkitApp(ctk.CTk):
             return
         text = logic.decode_image_file(path)
         self.result_var.set(text or "No QR code found in that image")
+
+    def _toggle_webcam(self):
+        import cv2
+        if self.scanning:
+            self.scanning = False
+            self.webcam_btn.configure(text="Start webcam scan")
+            if self.cap:
+                self.cap.release()
+                self.cap = None
+            return
