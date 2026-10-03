@@ -134,3 +134,9 @@ class QRToolkitApp(ctk.CTk):
             text = logic.decode_frame(frame)
             if text:
                 self.result_var.set(text)
+
+            rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            img = Image.fromarray(rgb).resize((640, 400))
+            photo = ImageTk.PhotoImage(img)
+            self.scan_video_label.configure(image=photo)
+            self.scan_video_label.image = photo
