@@ -140,3 +140,10 @@ class QRToolkitApp(ctk.CTk):
             photo = ImageTk.PhotoImage(img)
             self.scan_video_label.configure(image=photo)
             self.scan_video_label.image = photo
+
+        self.after(30, self._scan_loop)
+
+    def destroy(self):
+        if self.cap:
+            self.cap.release()
+        super().destroy()
