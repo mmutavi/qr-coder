@@ -147,3 +147,8 @@ class QRToolkitApp(ctk.CTk):
         if self.cap:
             self.cap.release()
         super().destroy()
+
+
+if __name__ == "__main__":
+    app = QRToolkitApp()
+    app.mainloop()
