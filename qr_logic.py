@@ -24,3 +24,10 @@ def decode_frame(frame):
     detector = cv2.QRCodeDetector()
     data, points, _ = detector.detectAndDecode(frame)
     return data if data else None
+
+
+def decode_image_file(path):
+    image = cv2.imread(path)
+    if image is None:
+        return None
+    return decode_frame(image)
