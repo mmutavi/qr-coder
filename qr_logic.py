@@ -18,3 +18,9 @@ def make_qr(text):
     qr.add_data(text)
     qr.make(fit=True)
     return qr.make_image(fill_color="black", back_color="white").convert("RGB")
+
+
+def decode_frame(frame):
+    detector = cv2.QRCodeDetector()
+    data, points, _ = detector.detectAndDecode(frame)
+    return data if data else None
